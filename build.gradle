@@ -1,0 +1,34 @@
+group 'elus'
+version '1.0-SNAPSHOT'
+
+buildscript {
+    ext.kotlinVersion = '1.1.2-2'
+
+    repositories {
+        mavenCentral()
+    }
+    dependencies {
+        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlinVersion"
+    }
+}
+
+apply plugin: 'kotlin'
+apply plugin: 'application'
+
+mainClassName = "app.ResearchKt"
+
+repositories {
+    jcenter()
+    maven { url "https://dl.bintray.com/kotlin/ktor" }
+    maven { url "https://dl.bintray.com/kotlin/kotlinx" }
+}
+
+dependencies {
+    compile "org.jetbrains.kotlin:kotlin-stdlib-jre8:$kotlinVersion"
+    compile "org.jetbrains.ktor:ktor-netty:0.3.2"
+    compile 'com.github.salomonbrys.kotson:kotson:2.5.0'
+    compile 'org.postgresql:postgresql:42.1.1'
+    compile 'com.github.andrewoma.kwery:core:0.16'
+    compile 'com.google.maps:google-maps-services:0.1.20'
+    compile 'org.apache.commons:commons-csv:1.4'
+}
