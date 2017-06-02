@@ -5,7 +5,7 @@ import com.google.maps.GeocodingApi
 import org.intellij.lang.annotations.Language
 
 fun findDepute(address: String) {
-  val context = GeoApiContext().setApiKey("AIzaSyD3YT9SQKOdciknl9AWGUP5rYKeIzILmUo")
+  val context = GeoApiContext().setApiKey("API_KEY")
   val result = GeocodingApi.geocode(context, address).await()[0]
   @Language("PostgreSQL")
   val sql = "SELECT * FROM elus.research WHERE st_contains(shape, st_point(:lon, :lat))"
