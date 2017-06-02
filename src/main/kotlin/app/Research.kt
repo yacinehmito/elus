@@ -22,5 +22,5 @@ fun findDepute(address: String) {
 
 
 fun main(args: Array<String>) {
-  findDepute("22 Rue du 19 Mars 1962, Grand-Couronne, France")
+  findDepute("PLACE")
 }
